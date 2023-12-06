@@ -35,7 +35,7 @@ const { title } = Astro.props;
       45deg,
       rgb(var(--accent)),
       rgb(var(--accent-light)) 30%,
-      white 60%
+      rgb(14, 13, 13) 60%
     );
   }
   html {
@@ -44,6 +44,7 @@ const { title } = Astro.props;
     font-family: "Inter", sans-serif;
     font-family: "Lato", sans-serif;
     font-family: "Poppins", sans-serif;
+	
   }
   code {
     font-family:
@@ -55,5 +56,8 @@ const { title } = Astro.props;
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+  }
+  body:hover {
+	cursor: url('../../public/cursor.svg'), auto;
   }
 </style>

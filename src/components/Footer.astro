@@ -1,0 +1,68 @@
+---
+---
+<footer class="py-5 page-footer">
+    <div class="container-fluid container-fluid-max">
+      <div class="row">
+        <div class="col-12 col-md-6 footer-child copyright">
+          Version © 2024 Edition
+        </div>
+        <div class="col-12 col-md-6 footer-child footer-links">
+          <a href="" class="mr-3">Privacy Policy</a>
+          <a href="">FAQ</a>
+          <div>
+            <small
+              >Made with <i class="fas fa-heart text-red"></i> by <a
+                href="http://georgemartsoukos.com/"
+                target="_blank">tadiwapfachi</a
+              >
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+
+.page-footer .footer-links {
+  text-align: right;
+}
+
+@media screen and (max-width: 991px) {
+  .page-header {
+    background: var(--red);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page-footer .footer-child {
+    text-align: center;
+  }
+}
+
+  </style>
+  <script>
+    const $body = $("body");
+const $header = $(".page-header");
+const $navCollapse = $(".navbar-collapse");
+const scrollClass = "scroll";
+
+$(window).on("scroll", () => {
+  if (this.matchMedia("(min-width: 992px)").matches) {
+    const scrollY = $(this).scrollTop();
+    scrollY > 0
+      ? $body.addClass(scrollClass)
+      : $body.removeClass(scrollClass);
+  } else {
+    $body.removeClass(scrollClass);
+  }
+});
+
+$(".page-header .nav-link, .navbar-brand").on("click", function(e) {
+  e.preventDefault();
+  const href = $(this).attr("href");
+  $("html, body").animate({
+    scrollTop: $(href).offset().top - 71
+  }, 600);
+});
+  </script>
