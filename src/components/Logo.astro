@@ -2,273 +2,161 @@
 import { getImage } from "astro:assets";
 ---
 
-<div>
-  <a href="https://incredibles.dev" class="btn" target="_blank">
-  <span class="btn__inner">
-    <span class="btn__label" data-label="Get in touch" data-hover="Go for it 💪">
-      Get in touch
-      
-      <span class="btn__label__background"></span>
-    </span>
-  </span>
-  <span class="btn__background"></span>
-</a>
+<div class="body">
+<!-- Explanation in JS tab -->
+
+<!-- The two texts -->
+<div id="container">
+	<span id="text1"></span>
+	<span id="text2"></span>
+</div>
+
+<!-- The SVG filter used to create the merging effect -->
+<svg id="filters">
+	<defs>
+		<filter id="threshold">
+			<!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+			<feColorMatrix in="SourceGraphic"
+					type="matrix"
+					values="1 0 0 0 0
+									0 1 0 0 0
+									0 0 1 0 0
+									0 0 0 255 -140" />
+		</filter>
+	</defs>
+</svg>
 </div>
 
 <style>
 
- /* Button */
-@keyframes btn-glow {
-  0% {
-    background-position: 0 100%;
-  }
-  100% {
-    background-position: 0 300%;
-  }
+/* Explanation in JS tab */
+
+.body {
+	margin: 0px;
 }
 
-.btn {
-  position: relative;
-
-  display: inline-block;
-
-  border-radius: 50px;
-
-  color: white;
-  font: 500 20px / 1 "Chivo Mono", monospace;
-  letter-spacing: 0.075em;
-  text-decoration: none;
-  text-transform: uppercase;
-
-  &__inner {
-    padding: 1px;
-    position: relative;
-    z-index: 2;
-
-    display: block;
-    overflow: hidden;
-
-    border-radius: inherit;
-
-    &:before {
-      position: absolute;
-      inset: 4px;
-      z-index: 1;
-
-      display: block;
-
-      animation: btn-glow 5s infinite linear;
-      background: linear-gradient(
-          20deg,
-          #00f8f1,
-          #ffbd1e20 16.5%,
-          #fe848f 33%,
-          #fe848f20 49.5%,
-          #00f8f1 66%,
-          #00f8f160 85.5%,
-          #ffbd1e 100%
-        )
-        0 100% / 100% 200%;
-      border-radius: inherit;
-      filter: blur(5px);
-      mix-blend-mode: overlay;
-      opacity: 0;
-      transition: opacity 0.2s linear 0.1s;
-
-      content: "";
-    }
-  }
-
-  &__label {
-    position: relative;
-    
-    display: block;
-    overflow: hidden;
-    padding: 0.95em 2em 0.9em;
-
-    border-radius: inherit;
-
-    color: transparent;
-    white-space: nowrap;
-
-    &:before,
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-
-      display: block;
-      padding: inherit;
-      width: 100%;
-      height: 100%;
-
-      color: white;
-      white-space: nowrap;
-
-      transition: transform 0.3s cubic-bezier(1, 0, 0, 1) 0s;
-    }
-
-    &:before {
-      transform: translate3d(0, 0, 0);
-
-      content: attr(data-label);
-    }
-
-    &:after {
-      transform: translate3d(0, -100%, 0);
-
-      content: attr(data-hover);
-    }
-    
-    &__background {
-      position: absolute;
-      inset: -100px;
-
-      display: block;
-
-      background: #093740 url("https://assets.codepen.io/5817405/noise_2.png");
-      background-blend-mode: overlay;
-
-      animation: noise-background 0.5s steps(1) infinite;
-    }
-  }
-
-  &__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    border-radius: inherit;
-
-    &:before,
-    &:after {
-      position: absolute;
-      inset: 0;
-
-      display: block;
-
-      border-radius: inherit;
-
-      content: "";
-    }
-
-    &:before {
-      background: white;
-      transition: background 0.3s linear 0s;
-    }
-
-    &:after {
-      animation: btn-glow 5s infinite linear;
-      background: linear-gradient(
-          -20deg,
-          #00f8f1,
-          #00f8f120 16.5%,
-          #00f8f1 33%,
-          #00f8f110 49.5%,
-          #00f8f1 66%,
-          #00f8f100 85.5%,
-          #00f8f1 100%
-        )
-        0 100% / 100% 200%;
-
-      filter: blur(5px);
-      opacity: 0;
-      transition: opacity 0s linear 0s;
-    }
-  }
-
-  &:hover {
-    .btn__background {
-      &:before {
-        background: #4cede1;
-        transition: background 0.07s linear;
-      }
-
-      &:after {
-        opacity: 1;
-        transition: opacity 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s;
-      }
-    }
-
-    .btn__inner {
-      &:before {
-        opacity: 0.5;
-      }
-    }
-
-    .btn__label {
-      &:before,
-      &:after {
-        transition-duration: 0.6s;
-        transition-timing-function: cubic-bezier(1, -0.6, 0, 1.6);
-      }
-
-      &:before {
-        transform: translate3d(0, 100%, 0);
-      }
-
-      &:after {
-        transform: translate3d(0, 0, 0);
-      }
-    }
-  }
+#container {
+	/* Center the text in the viewport. */
+	position: relative;
+	width: 30vw;
+	height: 100%;
+	top: 50px;
+	bottom: 0;
+	
+	/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
+	filter: url(#threshold) blur(0.6px);
 }
 
-/* Background */
-@keyframes noise-background {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  20% {
-    transform: translate3d(50px, 30px, 0);
-  }
-  40% {
-    transform: translate3d(10px, 50px, 0);
-   }
-   60% {
-    transform: translate3d(30px, 20px, 0);
-   }
-   80% {
-    transform: translate3d(50px, 0, 0);
-   }
-  100% {
-    transform: translate3d(100px, 0, 0);
-  }
+/* Your average text styling */
+#text1, #text2 {
+	position: absolute;
+	width: 100%;
+	display: inline-block;
+	font-size: 30pt;
+	color: black;
+	text-align: center;
+	
+	user-select: none;
 }
 
-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  
-  overflow: hidden;
-  
-  color: white;
-  font: 300 15px / 1 "Chivo Mono", monospace;
-  letter-spacing: 0.075em;
-  
-  &:before {
-    position: absolute;
-    inset: -100px;
-    z-index: -1;
-    
-    display: block;
-    
-    background: #093740 url("https://assets.codepen.io/5817405/noise_2.png");
-    background-blend-mode: overlay;
-
-    animation: noise-background 0.5s steps(1) infinite;
-
-    content: '';
-  }
-}
 </style>
+
+<script>
+
+  /*
+	This pen cleverly utilizes SVG filters to create a "Morphing Text" effect. Essentially, it layers 2 text elements on top of each other, and blurs them depending on which text element should be more visible. Once the blurring is applied, both texts are fed through a threshold filter together, which produces the "gooey" effect. Check the CSS - Comment the #container rule's filter out to see how the blurring works!
+*/
+
+const elts = {
+	text1: document.getElementById("text1"),
+	text2: document.getElementById("text2")
+};
+
+// The strings to morph between. You can change these to anything you want!
+const texts = [
+	"Hello",
+	"Guten Tag",
+	"こんにちは",
+	"Buongiorno",
+	"Buenos días",
+	"Bonjour ",
+	"Makadii?"
+];
+
+// Controls the speed of morphing.
+const morphTime = 1;
+const cooldownTime = 2.25;
+
+let textIndex = texts.length - 1;
+let time = new Date();
+let morph = 0;
+let cooldown = cooldownTime;
+
+elts.text1.textContent = texts[textIndex % texts.length];
+elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+function doMorph() {
+	morph -= cooldown;
+	cooldown = 0;
+	
+	let fraction = morph / morphTime;
+	
+	if (fraction > 1) {
+		cooldown = cooldownTime;
+		fraction = 1;
+	}
+	
+	setMorph(fraction);
+}
+
+// A lot of the magic happens here, this is what applies the blur filter to the text.
+function setMorph(fraction) {
+	// fraction = Math.cos(fraction * Math.PI) / -2 + .5;
+	
+	elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+	elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+	
+	fraction = 1 - fraction;
+	elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+	elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+	
+	elts.text1.textContent = texts[textIndex % texts.length];
+	elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+}
+
+function doCooldown() {
+	morph = 0;
+	
+	elts.text2.style.filter = "";
+	elts.text2.style.opacity = "100%";
+	
+	elts.text1.style.filter = "";
+	elts.text1.style.opacity = "0%";
+}
+
+// Animation loop, which is called every frame.
+function animate() {
+	requestAnimationFrame(animate);
+	
+	let newTime = new Date();
+	let shouldIncrementIndex = cooldown > 0;
+	let dt = (newTime - time) / 1000;
+	time = newTime;
+	
+	cooldown -= dt;
+	
+	if (cooldown <= 0) {
+		if (shouldIncrementIndex) {
+			textIndex++;
+		}
+		
+		doMorph();
+	} else {
+		doCooldown();
+	}
+}
+
+// Start the animation.
+animate();
+</script>
 

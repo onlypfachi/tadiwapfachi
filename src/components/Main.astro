@@ -2,25 +2,48 @@
 
 ---
 
-<section id="home" class="d-flex align-items-center">
-  <p>Hi, my name is</p>
-  <h1>Tadiwanashe David Pfachi. I build things for the web.</h1>
-  <p>
-    I'm a Harare, Zimbabwe base software engineer who specializes in building
-    (and occasionally designing) exceptional digital experiences. Currently, I'm
-    an engineer at Upstatement focused on building accessible, human-centered
-    products.
-  </p>
+<section id="home" class="container">
+  <div class="item-1">
+    <p>
+      From the heart of <span class="location">Harare, Zimbabwe,</span> I weave
+      the threads of technology and design into vibrant digital tapestries. I am
+      a <span class="location">software engineer</span> with a passion for accessibility and human-centered
+      experiences, currently looking for a SWE position.
+    </p><span class="greet">Hey there!👋🏿</span><br />
+    <span class="name">I'm Tadiwanashe David Pfachi</span>
+  </div>
+
+  <style>
+    .container {
+      height: 100vh;
+      width: 1680px;
+      display: grid;
+      grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
+      grid-template-columns: 40% 30% 30%;
+    }
+    .item-1 {
+      grid-row-start: 4;
+      grid-row-end: 6;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      background-color: rgb(255, 253, 253);
+      color: rgb(7, 28, 47);
+    }
+
+    p {
+      font-size: x-large;
+    }
+    .location {
+      font-weight: 600;
+    }
+    .name {
+      font-weight: 600;
+      height: 100px;
+      font-size: 4.5rem;
+    }
+    .greet {
+      font-size: x-large;
+    }
+  </style>
+  <script></script>
 </section>
-
-<style>
-  section {
-    height: 100vh;
-    width: 1680px;
-    background-color: aqua;
-  }
-  h1 {
-
-  }
-</style>
-<script></script>

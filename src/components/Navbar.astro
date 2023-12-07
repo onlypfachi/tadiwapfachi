@@ -1,15 +1,16 @@
 ---
 import ContactMe from "./ContactMe.astro";
+import Logo from "./Logo.astro";
 ---
 
 <nav class="nav">
   <a href="https://tadiwapfachi.dev">
-    <p>tadiwapfachi</p>
+    <Logo />
   </a>
   <ul>
-    <li id="hello"><ContactMe title="Projects" /></li>
-    <li><ContactMe title="About" /></li>
-    <li><ContactMe title="Contact" /></li>
+    <li id="hello"><a href="#projects"><ContactMe title="Projects" /></a></li>
+    <li><a href="#about"><ContactMe title="About" /></a></li>
+    <li><a href="#contact"><ContactMe title="Contact" /></a></li>
   </ul>
 </nav>
 <style>
@@ -30,7 +31,10 @@ import ContactMe from "./ContactMe.astro";
     align-items: center;
     border-bottom: 1px solid #000000;
     height: 100px;
-
+    position: fixed;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
   }
 
   ul {
