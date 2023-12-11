@@ -5,25 +5,33 @@ import Navbar from "../components/Navbar.astro";
 import Main from "../components/Main.astro";
 import Footer from "../components/Footer.astro";
 import Saperator from "../components/Seperator.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Navbar />
-
-  <Main />
-<Saperator />
-  <Footer />
+  <div
+    class="container"
+    
+  >
+    <div class="home"></div>"
+    <div class="projects"></div>"
+    <div class="aboutme"></div>"
+    <div class="contact"></div>"
+  </div>
 </Layout>
 
 <style>
-  main {
+  .container {
+    display: flex;
+    flex-direction: column;
     /* margin: auto;
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
     font-size: 20px;
-    line-height: 1.6;
-    cursor: url("../../public/cursor.svg"), auto; */
+    line-height: 1.6;*/
+    cursor: url("../../public/cursor.svg"), auto;
   }
   /* 
 	h1 {
@@ -34,4 +42,39 @@ import Saperator from "../components/Seperator.astro";
 		margin-bottom: 1em;
 		color: black;
 	} */
+
+  .home {
+    background-color: black;
+    height: 700px;
+  }
+
+  .projects {
+    background-color: rgb(247, 112, 112);
+    height: 700px;
+  }
+
+  .aboutme {
+    background-color: rgb(38, 0, 119);
+    height: 700px;
+  }
+
+  .contact {
+    background-color: rgb(20, 51, 0);
+    height: 700px;
+  }
 </style>
+<script>
+  // let elem = document.querySelector(".container");
+  // let infScroll = new InfiniteScroll(elem, {
+  //   // options
+  //   path: ".pagination__next",
+  //   append: ".post",
+  //   history: false,
+  // });
+
+  // // element argument can be a selector string
+  // //   for an individual element
+  // let infScroll = new InfiniteScroll(".container", {
+  //   // options
+  // });
+</script>

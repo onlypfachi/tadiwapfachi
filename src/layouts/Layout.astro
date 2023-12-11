@@ -22,7 +22,7 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body data-infinite-scroll='{ "path": ".pagination__next", "append": ".post", "history": false }'>
     <slot />
   </body>
 </html>
@@ -35,11 +35,12 @@ const { title } = Astro.props;
       45deg,
       rgb(var(--accent)),
       rgb(var(--accent-light)) 30%,
-      rgb(14, 13, 13) 60%
-    );
+      rgb(253, 249, 249) 60%
+    );  
+
   }
   html {
-    background: #ffffff;
+    background: #9e9b9b;
     background-size: 224px;
     font-family: "Inter", sans-serif;
     font-family: "Lato", sans-serif;
@@ -59,8 +60,11 @@ const { title } = Astro.props;
   }
   body:hover {
 	cursor: url('../../public/cursor.svg'), auto;
+
   }
   ::-webkit-scrollbar {
     display: none;
 }
+
+
 </style>

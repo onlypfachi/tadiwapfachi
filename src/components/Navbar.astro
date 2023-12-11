@@ -10,7 +10,7 @@ import Logo from "./Logo.astro";
   <ul>
     <li id="hello"><a href="#projects"><ContactMe title="Projects" /></a></li>
     <li><a href="#about"><ContactMe title="About" /></a></li>
-    <li><a href="#contact"><ContactMe title="Contact" /></a></li>
+    <li><a href="#contact"><ContactMe title="Get in touch" /></a></li>
   </ul>
 </nav>
 <style>
@@ -33,21 +33,20 @@ import Logo from "./Logo.astro";
     height: 100px;
     position: fixed;
     width: 100%;
-    background-color: rgb(255, 255, 255);
     top: 0px;
   }
 
   ul {
-    display: flex;
     list-style: none;
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0);
     flex-direction: row;
     align-items: center;
     height: 100%;
+    background-color: aliceblue;
+    width: 100%;
   }
   li {
     margin-left: 1rem;
-    background-color: rgb(255, 255, 255);
     height: 100%;
     width: 180px;
   }

@@ -1,49 +1,71 @@
 ---
-
+import { getImage } from "astro:assets";
+import Down from '../assets/down.svg';
+import Right from '../assets/right-top.svg';
 ---
 
 <section id="home" class="container">
+  <!-- The background -->
+  <div class="background"></div>
   <div class="item-1">
     <p>
-      From the heart of <span class="location">Harare, Zimbabwe,</span> I weave
+      Hi there, my name is <span class="location">Tadiwanashe David Pfachi</span>From the heart of <span class="location">Harare, Zimbabwe,</span> I weave
       the threads of technology and design into vibrant digital tapestries. I am
-      a <span class="location">software engineer</span> with a passion for accessibility and human-centered
-      experiences, currently looking for a SWE position.
-    </p><span class="greet">Hey there!👋🏿</span><br />
-    <span class="name">I'm Tadiwanashe David Pfachi</span>
+      a <span class="location">software engineer</span> with a passion for
+      accessibility and human-centered experiences, currently looking for a SWE
+      position.
+    </p>
+    <div class="getInTouch"><img src={ Right } alt="Right Top by The Deserve IconScout"><p>Get in touch</p></div>
+    <div class="scrollDown"><img src={ Down } alt="Down by Microsoft"><p>discover more</p></div>
   </div>
-
+</section>
   <style>
     .container {
-      height: 100vh;
-      width: 1680px;
+      height: 650px;
+      width: 97%;
       display: grid;
-      grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
-      grid-template-columns: 40% 30% 30%;
+      grid-template-rows: 20% 20% 20% 20% 20%;
+      grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+      border-radius: 35px;
+      padding: auto;
+      margin: auto;
+      margin-top: 80px;
     }
-    .item-1 {
-      grid-row-start: 4;
+
+    .background{
+      background: url(../assets/1329894.png)
+        left center / 200% auto no-repeat;
+      filter: blur(10px);
+      grid-row-start: 1;
       grid-row-end: 6;
       grid-column-start: 1;
-      grid-column-end: 3;
-      background-color: rgb(255, 253, 253);
+      grid-column-end: 11;
+      z-index: -1;
+    }
+ 
+    .item-1 {
+      grid-row-start: 2;
+      grid-row-end: 6;
+      grid-column-start: 3;
+      grid-column-end: 9;
+      background-color: rgba(255, 253, 253, 0);
       color: rgb(7, 28, 47);
     }
 
     p {
-      font-size: x-large;
+      font-size: xx-large;
     }
     .location {
       font-weight: 600;
     }
     .name {
       font-weight: 600;
-      height: 100px;
-      font-size: 4.5rem;
+      /* height: 100px; */
+      font-size: 3.5rem;
     }
     .greet {
       font-size: x-large;
     }
   </style>
   <script></script>
-</section>
+
