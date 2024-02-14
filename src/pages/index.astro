@@ -1,50 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Navbar from "../components/Navbar.astro";
 import Main from "../components/Main.astro";
 import Footer from "../components/Footer.astro";
-import Saperator from "../components/Seperator.astro";
+import Seperator from "../components/Seperator.astro";
 import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Navbar />
-  <div
-    class="container"
-    
-  >
-    <div class="home"></div>"
-    <div class="projects"></div>"
-    <div class="aboutme"></div>"
-    <div class="contact"></div>"
+  <div class="container">
+    <div class="home" id="Home"><Main /></div>
+    <!-- <Seperator section="Projects" />
+    <div class="aboutme"><Projects /></div>
+    <Seperator section="About Me" />
+    <div class="about"><AboutMe/></div> -->
   </div>
+  <Footer />
 </Layout>
 
 <style>
   .container {
     display: flex;
-    flex-direction: column;
-    /* margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    font-size: 20px;
-    line-height: 1.6;*/
-    cursor: url("../../public/cursor.svg"), auto;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
   }
-  /* 
-	h1 {
-		font-size: 4rem;
-		font-weight: 400;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-		color: black;
-	} */
+  .container > div {
+    margin: 10px;
+    width: 100%;
+  }
 
   .home {
-    background-color: black;
     height: 700px;
   }
 
@@ -58,23 +46,9 @@ import Projects from "../components/Projects.astro";
     height: 700px;
   }
 
-  .contact {
+  .about {
     background-color: rgb(20, 51, 0);
     height: 700px;
   }
 </style>
-<script>
-  // let elem = document.querySelector(".container");
-  // let infScroll = new InfiniteScroll(elem, {
-  //   // options
-  //   path: ".pagination__next",
-  //   append: ".post",
-  //   history: false,
-  // });
-
-  // // element argument can be a selector string
-  // //   for an individual element
-  // let infScroll = new InfiniteScroll(".container", {
-  //   // options
-  // });
-</script>
+<script></script>

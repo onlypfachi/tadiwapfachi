@@ -1,6 +1,11 @@
 ---
+interface Props {
+  section: string;
+}
+
+const { section} = Astro.props;
 ---
-<div class="bod"><h1 class="text">Projects</h1></div>
+<div class="bod"><h1 class="text">{section}</h1></div>
 
 <style>
 /* Font */

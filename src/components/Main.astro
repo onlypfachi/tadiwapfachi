@@ -1,71 +1,115 @@
 ---
-import { getImage } from "astro:assets";
-import Down from '../assets/down.svg';
-import Right from '../assets/right-top.svg';
+import * as Icon from "@astropub/icons";
 ---
 
 <section id="home" class="container">
   <!-- The background -->
   <div class="background"></div>
   <div class="item-1">
-    <p>
-      Hi there, my name is <span class="location">Tadiwanashe David Pfachi</span>From the heart of <span class="location">Harare, Zimbabwe,</span> I weave
-      the threads of technology and design into vibrant digital tapestries. I am
-      a <span class="location">software engineer</span> with a passion for
-      accessibility and human-centered experiences, currently looking for a SWE
-      position.
+    <p class="title">
+      Hello World! I'm Tadiwa Pfachi, a <span class="location"
+        >software engineer</span
+      > based in <span class="location">Harare, Zimbabwe</span> I enjoy creating
+      softwarea that aim for accessibility and human-centered experiences. Get in
+      touch if you want to know more about me.
     </p>
-    <div class="getInTouch"><img src={ Right } alt="Right Top by The Deserve IconScout"><p>Get in touch</p></div>
-    <div class="scrollDown"><img src={ Down } alt="Down by Microsoft"><p>discover more</p></div>
+    <div class="getInTouch" >
+      <p id="GIT">
+        <span id="span">Get in touch</span><Icon.ArrowTopRight class="arrow" id="arrow"/>
+      </p>
+    </div>
+  </div>
+  <div class="scrollDown">
+    <p>discover more</p>
   </div>
 </section>
-  <style>
-    .container {
-      height: 650px;
-      width: 97%;
-      display: grid;
-      grid-template-rows: 20% 20% 20% 20% 20%;
-      grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-      border-radius: 35px;
-      padding: auto;
-      margin: auto;
-      margin-top: 80px;
-    }
 
-    .background{
-      background: url(../assets/1329894.png)
-        left center / 200% auto no-repeat;
-      filter: blur(10px);
-      grid-row-start: 1;
-      grid-row-end: 6;
-      grid-column-start: 1;
-      grid-column-end: 11;
-      z-index: -1;
-    }
- 
-    .item-1 {
-      grid-row-start: 2;
-      grid-row-end: 6;
-      grid-column-start: 3;
-      grid-column-end: 9;
-      background-color: rgba(255, 253, 253, 0);
-      color: rgb(7, 28, 47);
-    }
+<style>
+  .container {
+    height: 650px;
+    width: 97%;
+    display: grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    border-radius: 35px;
+    padding: auto;
+    margin: auto;
+    margin-top: 80px;
+  }
 
-    p {
-      font-size: xx-large;
-    }
-    .location {
-      font-weight: 600;
-    }
-    .name {
-      font-weight: 600;
-      /* height: 100px; */
-      font-size: 3.5rem;
-    }
-    .greet {
-      font-size: x-large;
-    }
-  </style>
-  <script></script>
+  .background {
+    background: url(../assets/1329894.png) left center / 200% auto no-repeat;
+    filter: blur(10px);
+    grid-row-start: 1;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    z-index: -1;
+  }
 
+  .item-1 {
+    grid-row-start: 2;
+    grid-row-end: 6;
+    grid-column-start: 3;
+    grid-column-end: 9;
+    background-color: rgba(255, 253, 253, 0);
+    color: rgb(7, 28, 47);
+    display: grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  }
+
+  .getInTouch{
+    display: grid;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 8;
+    grid-column-end: 10;
+    color: rgb(7, 28, 47);
+    width: 130px;
+
+  }
+  .arrow {
+    height: 20px;
+    width: 20px;
+    padding: auto;
+    margin: auto;
+    left: 5px;
+    position: relative;
+    top: 5px;
+  }
+
+  .title {
+    font-size: xx-large;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    
+  }
+  .location {
+    font-weight: 600;
+  }
+  .name {
+    font-weight: 600;
+    /* height: 100px; */
+    font-size: 3.5rem;
+  }
+  .greet {
+    font-size: x-large;
+  }
+
+  #GIT {
+    display: inline;
+    
+  }
+  #GIT:hover #ARROW {
+  height: 40px;
+  }
+  #GIT:hover:before {
+    height: 40px;
+  }
+</style>
+<script>
+  const GetInTouch = document.getElementById("GIT");
+</script>
