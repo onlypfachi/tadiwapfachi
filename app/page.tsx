@@ -3,6 +3,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import ThemeSwitch from "@/components/themeSwitch";
 import Link from "next/link";
+import {
+  Facebook,
+  Github,
+  Instagram,
+  Linkedin,
+  XIcon,
+  Youtube,
+} from "lucide-react";
 
 export default function Home() {
   const links = [
@@ -16,7 +24,26 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Card className="w-96">
           <CardHeader className="flex flex-row justify-center items-center">
-            <CardTitle className="h-full w-60">tadiwapfachi</CardTitle>
+            <CardTitle className="h-full w-60 flex flex-row justify-start gap-3 items-center">
+              <Link href={"https://www.linkedin.com/in/tadiwapfachi/"} passHref>
+                <Linkedin />
+              </Link>
+              <Link href={"https://github.com/onlypfachi"} passHref>
+                <Github />
+              </Link>
+              <Link href={"https://x.com/tadiwapfachi"} passHref>
+                <XIcon />
+              </Link>
+              <Link href={"#"} passHref>
+                <Youtube />
+              </Link>
+              <Link href={"#"} passHref>
+                <Facebook />
+              </Link>
+              <Link href={"#"} passHref>
+                <Instagram />
+              </Link>
+            </CardTitle>
             <ThemeSwitch />
           </CardHeader>
           <Separator />
@@ -32,10 +59,14 @@ export default function Home() {
             ))}
           </CardContent>
           <Separator />
+
+          <CardContent>
+            <p className="text-gray-600 text-xs ">Recent Activity</p>
+          </CardContent>
         </Card>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <p>&copy;-2024</p>
+        <p>&copy; tadiwapfachi-2024</p>
       </footer>
     </div>
   );
