@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Card className="w-80">
+        <Card className="w-96">
           <CardHeader className="flex flex-row justify-center items-center">
-            <CardTitle className="h-full w-96">tadiwapfachi</CardTitle>
+            <CardTitle className="h-full w-60">tadiwapfachi</CardTitle>
             <ThemeSwitch />
           </CardHeader>
           <Separator />
