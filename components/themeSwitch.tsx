@@ -27,7 +27,7 @@ export const ThemeSwitch = () => {
       />
       <Switch
         id="theme-switch"
-        // checked={theme === "dark"}
+        checked={theme === "dark"}
         onCheckedChange={toggleTheme}
         aria-labelledby="theme-switch-label"
       />
