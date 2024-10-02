@@ -4,12 +4,12 @@ import { Separator } from "@/components/ui/separator";
 import ThemeSwitch from "@/components/themeSwitch";
 import Link from "next/link";
 import {
-  Facebook,
+  // Facebook,
   Github,
-  Instagram,
+  // Instagram,
   Linkedin,
-  XIcon,
-  Youtube,
+  // XIcon,
+  // Youtube,
 } from "lucide-react";
 
 export default function Home() {
