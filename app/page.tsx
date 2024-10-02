@@ -14,9 +14,9 @@ import {
 
 export default function Home() {
   const links = [
-    { tittle: "portfolio", url: "/dev" },
-    { tittle: "about me", url: "/about" },
-    { tittle: "contact", url: "contact" },
+    { title: "portfolio", url: "/dev" },
+    { title: "about me", url: "/about" },
+    { title: "contact", url: "contact" },
   ];
 
   return (
@@ -25,34 +25,49 @@ export default function Home() {
         <Card className="w-96">
           <CardHeader className="flex flex-row justify-center items-center">
             <CardTitle className="h-full w-60 flex flex-row justify-start gap-3 items-center">
-              <Link href={"https://www.linkedin.com/in/tadiwapfachi/"} passHref>
+              <Link
+                href={"https://www.linkedin.com/in/tadiwapfachi/"}
+                data-type="link"
+                id="interactable"
+                passHref
+              >
                 <Linkedin />
               </Link>
-              <Link href={"https://github.com/onlypfachi"} passHref>
+              <Link
+                href={"https://github.com/onlypfachi"}
+                data-type="link"
+                id="interactable"
+                passHref
+              >
                 <Github />
               </Link>
-              <Link href={"https://x.com/tadiwapfachi"} passHref>
+              {/* <Link
+                href={"https://x.com/tadiwapfachi"}
+                data-type="link"
+                id="interactable"
+                passHref
+              >
                 <XIcon />
               </Link>
-              <Link href={"#"} passHref>
+              <Link href={"#"} id="interactable" data-type="link" passHref>
                 <Youtube />
               </Link>
-              <Link href={"#"} passHref>
+              <Link href={"#"} id="interactable" data-type="link" passHref>
                 <Facebook />
               </Link>
-              <Link href={"#"} passHref>
+              <Link href={"#"} id="interactable" data-type="link" passHref>
                 <Instagram />
-              </Link>
+              </Link> */}
             </CardTitle>
             <ThemeSwitch />
           </CardHeader>
           <Separator />
           <CardContent>
             {links.map((link) => (
-              <div key={link.tittle}>
+              <div key={link.title} data-type="link" id="interactable">
                 <Link href={link.url} passHref>
                   <span className="cursor-pointer text-blue-500 font-bold text-5xl hover:underline">
-                    {link.tittle}/
+                    {link.title}/
                   </span>
                 </Link>
               </div>
