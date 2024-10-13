@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes"; // Import ThemeProvider
 import { Questrial } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import { ReactLenis } from "lenis/react";
+import { Analytics } from "@vercel/analytics/react"
 
 const questrial = Questrial({
   subsets: ["latin"],
@@ -109,10 +110,10 @@ export default function RootLayout({
               : "light"
           }
         >
-          <div id="trailer" ref={trailerRef}>
+          <div id="trailer" ref={trailerRef} className="hidden sm:block sm:bg-opacity-0">
             {trailerIcon}
           </div>
-          <ReactLenis root> {children} </ReactLenis>
+          <ReactLenis root> {children} <Analytics /></ReactLenis>
         </ThemeProvider>
       </body>
     </html>

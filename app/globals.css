@@ -116,6 +116,7 @@ body:hover>#trailer {
 
 #trailer[data-type] #trailer-icon {
     opacity: 1;
+
     /* Make sure trailer icon is visible when there’s a data-type */
 }
 
@@ -129,7 +130,9 @@ body:hover>#trailer {
 /* Optional: Style for the trailer icon to ensure it appears correctly */
 #trailer[data-type] #trailer-icon {
     opacity: 1;
+
     /* Show icon when data-type is set */
+
 }
 
 .page {
