@@ -21,7 +21,7 @@ const Portfolio = () => {
         <TransitionLink href="/" label="home" />
         <button
           className="shiny-cta"
-          onClick={() => console.log("button clicked")}
+          onClick={() => router.push("/contact")}
         >
           <span>Get in touch</span>
 
