@@ -26,7 +26,7 @@ export default function TransitionLink({
       className="space-y-4 text-xl"
     >
       <Link href={href} passHref onClick={() => handleClick()}>
-        <span className="cursor-pointer uppercase font-bold text-7xl hover:underline">
+        <span className="cursor-pointer uppercase font-bold lg:text-7xl text-4xl sm:text-5xl md:text-6xl hover:underline">
           {label} /
         </span>
       </Link>

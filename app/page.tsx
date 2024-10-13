@@ -16,14 +16,14 @@ export default function Home() {
   ];
 
   return (
-    <main className="grid grid-cols-12 grid-rows-12 items-center justify-items-center min-h-screen h-dvh p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <header className="col-span-12 flex justify-between items-center w-full row-start-1 row-end-2">
-        <h2 className="text-2xl uppercase">&copy; tadiwanashe david pfachi</h2>
+    <main className="grid lg:grid-cols-12 sm:grid-cols-3 grid-rows-12 items-center justify-items-center min-h-screen h-dvh p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <header className="lg:col-span-12 sm:col-span-3 flex flex-row justify-between items-center w-full row-start-1 row-end-2">
+        <h2 className="text-xs sm:text-sm lg:text-2xl uppercase">&copy; tadiwanashe david pfachi</h2>
         <ThemeSwitch />
       </header>
 
       {/* Navigation links */}
-      <nav className="row-start-4 col-start-2 col-span-4 items-center justify-self-start">
+      <nav className="row-start-4 lg:col-start-2 sm:col-start-1 lg:col-span-4 sm:col-span-3 items-center justify-self-start">
         {links.map((link) => (
           <TransitionLink key={link.title} href={link.url} label={link.title} />
         ))}
@@ -32,7 +32,7 @@ export default function Home() {
 
 
       {/* Footer */}
-      <footer className="row-start-11 row-span-2 col-start-2 col-span-10 justify-self-start grid grid-cols-3 gap-16 ">
+      <footer className="row-start-11 row-span-2 lg:col-start-2 sm:col-start-1  lg:col-span-10 sm:col-span-3 justify-self-start flex flex-col lg:grid lg:grid-cols-3 gap-16 ">
         <section className="flex flex-col justify-center w-96 col-start-1">
           <Link
             href="https://www.linkedin.com/in/tadiwapfachi/"
@@ -67,9 +67,9 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col w-96 justify-center col-start-2">
-          <span className="cursor-pointer  text-2xl">Get in touch</span>
+          <span className="cursor-pointer text-lg lg:text-2xl">Get in touch</span>
           <span
-            className="cursor-pointer text-2xl hover:underline"
+            className="cursor-pointer text-lg lg:text-2xl hover:underline"
             data-type="link"
             id="interactable"
           >
@@ -77,7 +77,7 @@ export default function Home() {
           </span>
         </section>
 
-        <section className="flex flex-col justify-end items-end col-start-3">
+        <section className="flex flex-col lg:justify-end lg:items-end col-start-3">
           <Link
             target="_blank"
             href="https://www.canva.com/design/DAFA9Dq_gWM/A12ioJBa-2n7lmuMjFS0Ww/view?utm_content=DAFA9Dq_gWM&utm_campaign=designshare&utm_medium=link&utm_source=editor"

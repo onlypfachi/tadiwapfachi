@@ -23,7 +23,7 @@ export const ThemeSwitch = () => {
   return (
     <div className="flex items-center gap-2 p-1 rounded-md">
       <SunIcon
-        className={`h-6 w-6 ${theme === "dark" ? "text-white" : "text-black"}`}
+        className={`xl:h-6 xl:w-6 h-3 sm:h-4 sm:w-4 w-3 ${theme === "dark" ? "text-white" : "text-black"}`}
       />
       <Switch
         id="theme-switch"
@@ -32,7 +32,7 @@ export const ThemeSwitch = () => {
         aria-labelledby="theme-switch-label"
       />
       <MoonIcon
-        className={`h-6 w-6 ${theme === "dark" ? "text-white" : "text-black"}`}
+        className={`xl:h-6 xl:w-6 h-3 sm:h-4 sm:w-4 w-3 ${theme === "dark" ? "text-white" : "text-black"}`}
       />
       <span id="theme-switch-label" className="sr-only">
         Toggle theme
