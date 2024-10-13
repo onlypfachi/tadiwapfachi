@@ -23,7 +23,7 @@ export default function Home() {
       </header>
 
       {/* Navigation links */}
-      <nav className="row-start-4 lg:col-start-2 col-start-1 lg:col-span-4 col-span-3 items-center justify-self-start">
+      <nav className="row-start-3 lg:col-start-2 col-start-1 lg:col-span-4 col-span-3 items-center justify-self-start">
         {links.map((link) => (
           <TransitionLink key={link.title} href={link.url} label={link.title} />
         ))}
@@ -32,7 +32,7 @@ export default function Home() {
 
 
       {/* Footer */}
-      <footer className="lg:row-start-11 row-start-9 row-span-2 lg:col-start-2 sm:col-start-1  lg:col-span-10 sm:col-span-3 justify-self-start flex flex-col lg:grid lg:grid-cols-3 gap-16 ">
+      <footer className="lg:row-start-11 row-start-8 row-span-2 lg:col-start-2 sm:col-start-1  lg:col-span-10 sm:col-span-3 justify-self-start flex flex-col lg:grid lg:grid-cols-3 gap-16 ">
         <section className="flex flex-col justify-center w-96 col-start-1">
           <Link
             href="https://www.linkedin.com/in/tadiwapfachi/"

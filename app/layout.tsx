@@ -110,7 +110,7 @@ export default function RootLayout({
               : "light"
           }
         >
-          <div id="trailer" ref={trailerRef} className="hidden sm:block sm:bg-opacity-0">
+          <div id="trailer" ref={trailerRef} className="-z-0 lg:z-20 ">
             {trailerIcon}
           </div>
           <ReactLenis root> {children} <Analytics /></ReactLenis>
