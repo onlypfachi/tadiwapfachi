@@ -1,9 +1,10 @@
 "use client";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github } from "lucide-react";
 import "./globals.css";
 import { ThemeProvider } from "next-themes"; // Import ThemeProvider
 import { Questrial } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
+import { ReactLenis } from "lenis/react";
 
 const questrial = Questrial({
   subsets: ["latin"],
@@ -29,14 +30,20 @@ export default function RootLayout({
       const trailer = document.getElementById("trailer");
 
       if (trailer) {
-        const animateTrailer = (e: MouseEvent, interacting: boolean) => {
+        const animateTrailer = (
+          e: MouseEvent,
+          interacting: boolean,
+        ) => {
           const x = e.clientX - trailer.offsetWidth / 2;
           const y = e.clientY - trailer.offsetHeight / 2;
 
           const keyframes = {
             transform: `translate(${x}px, ${y}px) scale(${interacting ? 4 : 1})`,
           };
-          trailer.animate(keyframes, { duration: 800, fill: "forwards" });
+          trailer.animate(keyframes, {
+            duration: 300,
+            fill: "forwards",
+          });
         };
 
         const handleMouseMove = (e: MouseEvent) => {
@@ -49,12 +56,12 @@ export default function RootLayout({
 
           if (interacting && interactable) {
             const iconType = interactable.getAttribute("data-type");
-            console.log("Icon Type:", iconType); // Log the icon type
+            // console.log(iconType)
 
             const icon =
               iconType === "link" ? (
                 <ArrowUpRight color="black" id="trailer-icon" />
-              ) : (
+              ) : iconType === "github" ? (<Github id="trailer-icon" color="black" size={14} />) : (
                 <ArrowDown id="trailer-icon" color="black" />
               );
 
@@ -87,6 +94,8 @@ export default function RootLayout({
     }
   }, [isClient]);
 
+
+
   return (
     <html lang="en" className={questrial.className}>
       <body>
@@ -94,7 +103,8 @@ export default function RootLayout({
           attribute="class"
           defaultTheme={
             typeof window !== "undefined" &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
+              window.matchMedia("(prefers-color-scheme: dark)")
+                .matches
               ? "dark"
               : "light"
           }
@@ -102,7 +112,7 @@ export default function RootLayout({
           <div id="trailer" ref={trailerRef}>
             {trailerIcon}
           </div>
-          {children}
+          <ReactLenis root> {children} </ReactLenis>
         </ThemeProvider>
       </body>
     </html>
