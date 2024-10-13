@@ -6,7 +6,6 @@ import { Project } from "@/lib/types";
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { useRouter } from "next/navigation";
 
 
