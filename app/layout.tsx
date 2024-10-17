@@ -6,6 +6,7 @@ import { Questrial } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import { ReactLenis } from "lenis/react";
 import { Analytics } from "@vercel/analytics/react"
+import { Toaster } from "@/components/ui/sonner";
 
 const questrial = Questrial({
   subsets: ["latin"],
@@ -113,7 +114,7 @@ export default function RootLayout({
           <div id="trailer" ref={trailerRef} className="-z-0 lg:z-20 ">
             {trailerIcon}
           </div>
-          <ReactLenis root> {children} <Analytics /></ReactLenis>
+          <ReactLenis root> {children} <Toaster position="bottom-center" expand={true} /><Analytics /></ReactLenis>
         </ThemeProvider>
       </body>
     </html>
