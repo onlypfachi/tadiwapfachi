@@ -1,3 +1,4 @@
+"use client"
 import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
